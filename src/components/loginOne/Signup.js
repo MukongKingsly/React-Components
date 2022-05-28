@@ -1,14 +1,14 @@
 import { useState, useRef } from "react"
 import { Link } from "react-router-dom"
 
-export default function Signup() {
+export default function SignupOne() {
     const passwordIconRef = useRef(null)
     const passwordInputRef = useRef(null)
-    
+
     function toggle() {
         const iconClassList = passwordIconRef.current.classList
         const password = passwordInputRef.current
-        
+
         if ( iconClassList.contains("icon-see") ) {
             password.type = "text"
             iconClassList.remove('icon-see')
@@ -19,20 +19,20 @@ export default function Signup() {
             iconClassList.add('icon-see')
             iconClassList.remove('icon-blind')
         }
-        
+
     }
     const [formData, setFormData] = useState(
         {
-            name: "", 
-            email: "", 
+            name: "",
+            email: "",
             password: "",
             userDesc: ""
 
         }
     )
-    
+
     function handleChange(event) {
-        
+
         const {name, value} = event.target
 
         setFormData(prevFormData => {
@@ -41,10 +41,8 @@ export default function Signup() {
                 [name]: value
             }
         })
-        
-       
     }
-    
+
     function handleSubmit(e) {
         e.preventDefault()
 
@@ -55,20 +53,17 @@ export default function Signup() {
         } else {
             //submit formData to API here
             //navigate to next page
-            
         }
-        
     }
-    
+
     return (
-        <div className="signup col-2">
-            <div className="form-wrapper">
+        <div className="componentOne-signup compOne-col-2">
+            <div className="componentOne-form-wrapper ">
                 <h2>Let's set up your account</h2>
                 <p>Already have an account? <Link to="/">Sign in</Link></p>
-                
-            
+
                 <form onSubmit={handleSubmit}>
-                    <input 
+                    <input
                         type="text"
                         required
                         placeholder="Your name"
@@ -76,7 +71,7 @@ export default function Signup() {
                         name="name"
                         value={formData.firstName}
                     />
-                    <input 
+                    <input
                         type="email"
                         required
                         placeholder="Email address"
@@ -84,7 +79,7 @@ export default function Signup() {
                         name="email"
                         value={formData.firstName}
                     />
-                    <select 
+                    <select
                         onChange={handleChange}
                         name="userDesc"
                         required
@@ -95,8 +90,8 @@ export default function Signup() {
                         <option value="reader">Reader</option>
                     </select>
                     <div className="passwordBox">
-                        
-                        <input 
+
+                        <input
                             type="password"
                             ref={passwordInputRef}
                             required
@@ -105,21 +100,18 @@ export default function Signup() {
                             name="password"
                             value={formData.password} //password will be encrypted before sending same over the air!
                         />
-                        <div  
+                        <div
                             onClick={toggle}
                             ref={passwordIconRef}
                             className="background icon-see"
                         >
                         </div>
                     </div>
-                    
+
                     <small>Minimum 8 characters</small>
                     <button>Next</button>
                     <small>By clicking the 'Next' button, you agreee to creating a free account and to <Link to="/terms">Terms of Service</Link> and to <Link to="/privacy">Privacy Policy</Link></small> 
-                
                 </form>
- 
-
             </div>
         </div>
     )
