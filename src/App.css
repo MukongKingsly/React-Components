@@ -1,0 +1,128 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+.container {
+  background-image: url("./components/images/img.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 990px;
+  margin: 5% auto;
+  display: flex;
+}
+.signup {
+  background-color: white;
+  padding: 5rem;
+}
+.form-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.form-wrapper > p {
+  font-weight: bold;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.banner {
+  background: #0096ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.banner > p,
+.banner > h2 {
+  text-align: center;
+  margin: 2rem;
+}
+.col-1 {
+  width: 40%;
+  margin: 0 1rem 1rem 0;
+}
+.col-2 {
+  width: 60%;
+  margin: 0 0 1rem 1rem;
+}
+input,
+button,
+select {
+  border: 0.1rem solid #eee;
+  padding: 0.5rem 0 0.5rem 0.8rem;
+  color: grey;
+  font-size: 1rem;
+  outline: none;
+}
+button {
+  background: #ddd;
+  cursor: pointer;
+}
+small {
+  color: grey;
+}
+.passwordBox {
+  position: relative;
+  border: 0.1rem solid #eee;
+  width: auto;
+}
+input[name="password"] {
+  border: none;
+  width: 88%;
+}
+.icon-see {
+  background-image: url("./components/images/iconmonstr-eye-thin.svg");
+}
+.icon-blind {
+  background-image: url("./components/images/iconmonstr-eye-off-thin.svg");
+}
+.background {
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  width: 1rem;
+  height: 2rem;
+  background-position: 99%;
+  right: 0;
+  top: 1%;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* Media Query*/
+@media (max-width: 600px) {
+  .container {
+    justify-content: center;
+    flex-direction: column-reverse;
+    background: white;
+  }
+  .banner {
+    background: white;
+    color: black;
+    align-items: flex-start;
+    width: 90%;
+    gap: 0.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
+  .banner > p,
+  .banner > h2 {
+    text-align: justify;
+    margin: 0;
+  }
+  .signup {
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin-left: 0;
+  }
+  .form-wrapper {
+    width: 90%;
+    padding-top: 4rem;
+  }
+}
