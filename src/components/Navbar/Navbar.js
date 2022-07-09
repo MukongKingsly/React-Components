@@ -12,7 +12,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/loginone">Login One</Link>
+            <Link to="/countdowntimer">Countdown Timer</Link>
           </li>
           <li>
             <Link to="/logintwo">Login Two</Link>

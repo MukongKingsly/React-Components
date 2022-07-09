@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Spinner from "./components/Spinner/Spinner";
-import { Navbar, ComponentOne } from "./components";
+import { Navbar, ComponentOne, CountdownTimer } from "./components";
 import "./App.css";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
             <Routes>
               <Route index element={<ComponentOne />} />
               <Route path="/signupone" element={<ComponentOne />} />
+              <Route path="/countdowntimer" element={<CountdownTimer />} />
             </Routes>
           </div>
         </div>
